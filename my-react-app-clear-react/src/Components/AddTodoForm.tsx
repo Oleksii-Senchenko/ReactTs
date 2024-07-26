@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, FC, FormEvent } from "react";
 
-const AddTodoForm = ({ onAdd }) => {
-  const [newTodo, setNewTodo] = useState("");
+interface AddFormProps {
+  onAdd: (text: string)=>void
+}
 
-  const handleSubmit = (e) => {
+
+const AddTodoForm: FC<AddFormProps> = ({ onAdd }) => {
+  const [newTodo, setNewTodo] = useState<string>("");
+
+  const handleSubmit = (e:FormEvent) => {
     e.preventDefault();
     onAdd(newTodo);
     setNewTodo("");

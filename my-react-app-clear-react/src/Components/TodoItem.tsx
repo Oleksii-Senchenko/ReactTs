@@ -1,6 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
+import { Task } from "../App";
 
-const TodoItem = ({ todo, onDelete }) => {
+interface ItemTodoInterFace {
+  todo: Task
+  onDelete: (id: number) => void;
+}
+
+const TodoItem: FC<ItemTodoInterFace> = ({ todo, onDelete }) => {
   return (
     <li>
       <p>{todo.text}</p>
