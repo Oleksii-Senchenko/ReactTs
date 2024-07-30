@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { Task } from "../App";
 
 interface ItemTodoInterFace {
-  todo: Task
+  todo: { id: number; text: string };
   onDelete: (id: number) => void;
 }
 
